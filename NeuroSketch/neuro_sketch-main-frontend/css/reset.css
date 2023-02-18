@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+a {
+	color: white;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.hide {
+	display: none;
+}
+
+.temp-hide {
+	visibility: hidden;
+}
+.clearfix::after {
+	clear: both;
+	content: '';
+	display: table;
+}
+
+.drawing-area {
+	display: block !important;
+}

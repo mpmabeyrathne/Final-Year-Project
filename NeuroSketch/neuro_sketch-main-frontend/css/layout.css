@@ -1,0 +1,14 @@
+.sidebar-left,
+.sidebar-right {
+    padding: 10px;
+    width: 20%;
+}
+
+.drawing-area {
+    border: 2px solid #f5f5f5;
+    width: 60%;
+}
+
+.drawing-area {
+    display: block !important;
+}

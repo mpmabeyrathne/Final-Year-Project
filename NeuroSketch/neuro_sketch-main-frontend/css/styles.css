@@ -1,0 +1,75 @@
+.main-content {
+    overflow: hidden;
+    width: 100%;
+}
+.background-radial-gradient {
+    background-color: hsl(218, 41%, 15%);
+    background-image: linear-gradient(to left top, #f08705, #f38805, #f58a04, #f88b04, #fb8c03, #f58902, #f08602, #ea8301, #db7a01, #cc7200, #bd6900, #af6100);
+}
+
+#radius-shape-1 {
+    height: 220px;
+    width: 220px;
+    top: -60px;
+    left: -130px;
+    background-image: linear-gradient(to right bottom, #ff8d00, #ff900a, #ff9413, #ff971a, #ff9a20, #ff9d26, #ff9f2c, #ffa231, #ffa538, #ffa83e, #ffaa44, #ffad4a);
+    overflow: hidden;
+}
+
+#radius-shape-2 {
+    border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    bottom: -60px;
+    right: -110px;
+    width: 300px;
+    height: 300px;
+    background-image: linear-gradient(to left top, #ff8d00, #ff900a, #ff9413, #ff971a, #ff9a20, #ff9d26, #ff9f2c, #ffa231, #ffa538, #ffa83e, #ffaa44, #ffad4a);
+    overflow: hidden;
+}
+
+.bg-glass {
+    background-color: transparent !important;
+}
+
+.formContent {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 20px !important;
+}
+
+.buttonColor {
+    background-color: transparent;
+    color: orange;
+    border: 2px solid orange;
+    width: 100%;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.buttonColor:hover{
+    background-color: orange;
+    border: 2px solid orange;
+    color: white;
+}
+
+
+.btnOTP {
+    background-color: transparent;
+    color: orange;
+    border: 2px solid orange;
+    width: 150px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+}
+
+
+.btnOTP:hover{
+    background-color: orange;
+    border: 2px solid orange;
+    color: white;
+}
+
+.txtOTP {
+    width: 150px;
+    margin-bottom: 20px;
+}
