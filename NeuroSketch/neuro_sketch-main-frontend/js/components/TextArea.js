@@ -39,6 +39,11 @@ export class TextArea {
     this.setTextBoxAttributes();
 
     this.foreignObject.appendChild(this.inputBox);
+
+    // Add event listeners for drag and drop
+    this.inputBox.addEventListener('mousedown', this.handleMouseDown.bind(this));
+    this.inputBox.addEventListener('mousemove', this.handleMouseMove.bind(this));
+    this.inputBox.addEventListener('mouseup', this.handleMouseUp.bind(this));
   }
 
   setForeignObjectAttributes() {
@@ -53,7 +58,7 @@ export class TextArea {
   }
 
   setTextBoxAttributes() {
-    this.inputBox.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+    this.inputBox.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml', 'http://www.w3.org/2000/svg');
     this.inputBox.innerHTML = 'Text';
 
     setSVGAttributes(this.inputBox, {
@@ -77,5 +82,23 @@ export class TextArea {
 
   getTextObject() {
     return this.inputBox;
+  }
+
+  handleMouseDown(event) {
+    this.dragging = true;
+    this.offsetX = event.clientX - this.x;
+    this.offsetY = event.clientY - this.y;
+  }
+
+  handleMouseMove(event) {
+    if (this.dragging) {
+      this.x = event.clientX - this.offsetX;
+      this.y = event.clientY - this.offsetY;
+      this.setForeignObjectAttributes();
+    }
+  }
+
+  handleMouseUp(event) {
+    this.dragging = false;
   }
 }
