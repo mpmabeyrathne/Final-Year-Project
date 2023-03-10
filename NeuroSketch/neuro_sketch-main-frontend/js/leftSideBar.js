@@ -21,6 +21,7 @@ function handleShapeInfo(sidebarShape){
 	);
 
 
+
 	sidebarShape.addEventListener('mouseover', displayShapeInfo);
 	sidebarShape.addEventListener('mouseout', hideShapeInfo);
 	sidebarShape.addEventListener('click', hideShapeInfo);
