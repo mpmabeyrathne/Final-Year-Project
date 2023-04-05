@@ -181,9 +181,30 @@ export class Shape {
             that.g.appendChild(button);
         });
 
-        this.addToDOM();
+        this.addToDOM(); 
 
-        this.textBox = new TextArea(this.g_.getBBox());
+        
+        let shapeElement = document.getElementById('Button1'); 
+        console.log('Shape element:', shapeElement);
+        let shapeId = shapeElement.getAttribute('id');
+        console.log('Shape ID:', shapeId);
+        let textAlign;
+        
+        if (shapeId === 'Button1') {
+          textAlign = 'center';
+        } else if (shapeId === 'inputText') {
+          textAlign = 'left';
+        } else if (shapeId === 'checkbox') {
+          textAlign = 'right';
+        } else {
+          textAlign = 'left';
+        }
+        
+        console.log('Text align:', textAlign);
+        
+        this.textBox = new TextArea({
+          textAlign: textAlign
+        });
 
         this.foreignG.appendChild(this.textBox.getForeignObject());
         this.g.append(this.foreignG);

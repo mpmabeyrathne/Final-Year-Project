@@ -13,7 +13,8 @@ export class TextArea {
       fontSize = '12px',
       overflow = 'visible',
       textAlign = 'center',
-      background = 'transparent'
+      background = 'transparent',
+      
     } = props;
 
     this.x = x;
@@ -34,9 +35,11 @@ export class TextArea {
 
     this.foreignObject = document.createElementNS(SVGNS, 'foreignObject');
     this.setForeignObjectAttributes();
+   
 
     this.inputBox = document.createElement('div');
     this.setTextBoxAttributes();
+   
 
     this.foreignObject.appendChild(this.inputBox);
 
@@ -60,20 +63,22 @@ export class TextArea {
   setTextBoxAttributes() {
     this.inputBox.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml', 'http://www.w3.org/2000/svg');
     this.inputBox.innerHTML = 'Text';
-
+  
     setSVGAttributes(this.inputBox, {
       contenteditable: 'true',
       class: 'shape-text font-default'
     });
-
+  
     setCSSAttributes(this.inputBox, {
       color: this.color,
       border: this.border,
       outline: this.outline,
       'font-size': this.fontSize,
       background: this.background,
-      'text-align': this.textAlign
+      'text-align': this.textAlign,
+      
     });
+    
   }
 
   getForeignObject() {
@@ -101,4 +106,10 @@ export class TextArea {
   handleMouseUp(event) {
     this.dragging = false;
   }
+
+  getBBox() {
+    return this.foreignObject.getBBox();
+  }
 }
+
+

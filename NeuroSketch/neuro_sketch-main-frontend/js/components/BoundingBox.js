@@ -25,7 +25,8 @@ export class BoundingBox {
             stroke: stroke,
             class: 'bounding-box',
             'stroke-width': strokeWidth,
-            'stroke-dasharray': strokeDashArray
+            'stroke-dasharray': strokeDashArray,
+            
         });
     }
 
