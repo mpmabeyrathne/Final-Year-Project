@@ -258,7 +258,8 @@ input[type='radio'],
 
 .btn-save,
 .btnOpen,
-.btn-save-progress {
+.btn-save-progress 
+.btn-image{
     width: 100px;
     height: 30px;
     background-color: white;
@@ -276,6 +277,11 @@ input[type='radio'],
     background-color: orange;
     color: white;
 }
+
+.btn-image {
+    position: relative;   
+    margin-top: 30px;
+  }
 
 input[type='number'] {
     width: 60px;

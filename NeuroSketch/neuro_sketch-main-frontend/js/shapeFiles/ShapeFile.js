@@ -1,31 +1,42 @@
 
 let ShapeInfo = {
-  Button: {
+
+  Frame: {
     children: [
       {
         rect: {
-          x: "50",
-          y: "25",
+          x: "4",
           width: "100",
-          height: "50",
+          height: "100",
           fill: "white",
+          stroke:"black",
         },
       },
       {
-        TextArea: {
-          x: "75",
-          y: "50",
-          width: "90",
-          height: "20",
-          color: "black",
-          fontSize: "12px",
-          textAlign: "center",
-          background: "transparent",
+        rect: {
+          x: "4",
+          width: "100",
+          height: "1%",
+          fill: "#423F3F",
         },
       },
+      
     ],
   },
-
+  
+  Button: {
+    children: [
+      {
+        path : {
+          d: "M21 0.5H97C108.322 0.5 117.5 9.67816 117.5 21C117.5 32.3218 108.322 41.5 97 41.5H21C9.67816 41.5 0.5 32.3218 0.5 21C0.5 9.67816 9.67816 0.5 21 0.5Z",
+          fill:"white", 
+          stroke:"#070707",
+          width: "60",
+          height: "60",
+        },
+    },
+    ],
+  },
   Image: {
     children: [
       {
@@ -150,17 +161,21 @@ let ShapeInfo = {
   Lable: {
     children: [
       {
-        rect: {
-          x: "10",
-          y: "10",
-          width: "80",
-          height: "50",
-        },
+      rect: {
+        x: "0.5",
+        y: "0.5",
+        width: "102",
+        height: "37",
+        fill: "#FEFEFE",
+        stroke: "black",
+        'stroke-dasharray': "2 2",
+        "stroke-width": "2",
       },
+    },
     ],
-    stroke: "none",
-    fill: "none",
+    
   },
+
 
   Heading: {
     children: [
