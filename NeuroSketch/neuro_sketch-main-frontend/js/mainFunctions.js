@@ -77,7 +77,7 @@ function userSave() {
     try {
         $.ajax({
             method: 'POST',
-            url: "http://localhost:5000/api/v1/neuro_sketch/user-save",
+            url: "/api/v1/neuro_sketch/user-save",
             contentType: "application/json",
             async: false,
             data: JSON.stringify(
@@ -92,7 +92,7 @@ function userSave() {
             success: function (response) {
                 if (response.message === "User added successfully!") {
                     alert(response.message);
-                    window.location.href = 'neuro_sketch.html';
+                    window.location.href = '/signin ';
                 } else {
                     alert("User already registered! please sign in now!")
                 }
@@ -124,7 +124,7 @@ function userLogin() {
     let userEmail = $('#emailAddress').val();
     let userPassword = $('#passWord').val();
 
-    const userLoginURL = `http://localhost:5000/api/v1/neuro_sketch/${userEmail}`;
+    const userLoginURL = `/api/v1/neuro_sketch/${userEmail}`;
 
     try {
         $.ajax({
@@ -138,7 +138,7 @@ function userLogin() {
 
                 if (response[0].email === userEmail) {
                     if (response[0].password === userPassword) {
-                        window.location.href = 'neuro_sketch.html';
+                        window.location.href = '/neuro_sketch';
                     } else {
                         alert("User password wrong!")
                     }
@@ -148,5 +148,7 @@ function userLogin() {
             }
         });
     } catch (err) {
+        console.log(err);
     }
 }
+

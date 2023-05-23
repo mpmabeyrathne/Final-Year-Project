@@ -1,3 +1,8 @@
+import { drawControls, resetControls } from "../shapeControls.js";
+
+//import { selectedShape } from "../leftSideBar.js";
+let selectedShape = null;
+
 function shapeEventListener(shape) {
     shape.addEventListener('mouseover', () => {
     });
@@ -19,6 +24,8 @@ function shapeEventListener(shape) {
     }
 }
 
+export {shapeEventListener};
+
 
 function outsideClickEventListener(svgObject) {
     svgObject.sv.addEventListener('click', (e) => {
@@ -32,6 +39,8 @@ function outsideClickEventListener(svgObject) {
         }
     });
 }
+export {outsideClickEventListener};
+
 
 function updateFillColorStatus(shape) {
     let filledCheck = $('#fill-status');
@@ -148,3 +157,5 @@ function populateRightSideBar(shape) {
     updatePositionProperties(shape);
     updateRotationProperties(shape);
 }
+
+export{selectedShape};

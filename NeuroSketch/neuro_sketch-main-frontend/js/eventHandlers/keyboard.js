@@ -1,3 +1,6 @@
+import { selectedShape } from "../eventHandlers/shapeEventListener.js";
+import { shapeEventListener } from "../eventHandlers/shapeEventListener.js";
+
 let ctrlC = false,
     copiedShape = null;
 
@@ -42,3 +45,5 @@ function keyBoardEventListener(svgObject) {
         }
     });
 }
+
+export {keyBoardEventListener};

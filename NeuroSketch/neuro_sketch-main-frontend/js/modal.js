@@ -1,3 +1,4 @@
+import { shapeEventListener } from "./eventHandlers/shapeEventListener.js";
 
 function showDraftSelector(sv) {
     let modal = $('.modal');
@@ -215,3 +216,5 @@ function addGrid(sv) {
     sv.prepend(gridRect);
     sv.prepend(defElement);
 }
+
+export {showDraftSelector,addGrid};

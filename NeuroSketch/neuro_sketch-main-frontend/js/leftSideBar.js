@@ -1,6 +1,8 @@
-
-
-let selectedShape = null;
+import { CustomShape } from './components/CustomShape.js';
+import { Connector } from './components/Connector.js';
+import { shapeEventListener } from './eventHandlers/shapeEventListener.js';
+import {ConnectorInfo} from './shapeFiles/ConnectorFile.js';
+import {SVG} from './app.js'
 
 
 function sideBarShapeHoverEventListener(sv) {
@@ -11,6 +13,8 @@ function sideBarShapeHoverEventListener(sv) {
 	handleShapeInfo(sidebarShape);
   });
 }
+
+export { sideBarShapeHoverEventListener };
 
 function handleShapeInfo(sidebarShape){
 	let showShapeInfo = $('.show-shape-info');
@@ -49,6 +53,15 @@ function handleShapeInfo(sidebarShape){
 }
 
 
+const svgElement = document.querySelector(".shape");
+
+const svgObject = {
+  sv: svgElement,
+  ShapesConstruct: {
+    CustomShape: CustomShape,
+    Connector: Connector,
+  },
+};
 function addEventListenerLeftSideBar(svgObject) {
   let allShapesBtn = document.querySelectorAll(
     '.sidebar-shape, .sidebar-connector'
@@ -57,22 +70,65 @@ function addEventListenerLeftSideBar(svgObject) {
   allShapesBtn.forEach((button) => {
     button.addEventListener('click', () => {
       let clickedShape = button.getAttribute('title');
-      let elem;
-      if (getHTMLAttribute(button, 'class') === 'sidebar-shape') {
-        let elem = new svgObject.ShapesConstruct['CustomShape']({
-          sv: svgObject.sv,
-          ...ShapeInfo[clickedShape]
-        });
-        elem.create();
-        shapeEventListener(elem.getElement());
-      } else {
-        elem = new svgObject.ShapesConstruct['Connector']({
-          sv: svgObject.sv,
-          ...ConnectorInfo[clickedShape]
-        });
-        elem.create();
-        connectorEventListener(svgObject.sv);
-      }
+      createAndDisplayShape(svgObject, clickedShape);
     });
   });
 }
+
+async function fetchAndDisplayShapes(_) {
+  const svgObject = new SVG('.drawing-area')
+  console.log("Inside fetchAndDisplayShapes");
+  const Response = await fetch('http://localhost:5000/api/title');
+  const data = await Response.json();
+  console.log("Fetched data:", data);
+
+
+  if (data.titles && Array.isArray(data.titles)) {
+    console.log("Iterating through fetched titles array:", data.titles);
+    data.titles.forEach((title, index) => {
+      setTimeout(() => {
+        console.log("Trying shape:", title);
+        createAndDisplayShape(svgObject, title);
+      }, index * 10); 
+    });
+  } else {
+    console.error("Fetched data is not an array:", data);
+  }
+}
+
+
+
+function createAndDisplayShape(svgObject, clickedShape) {
+  let button = document.querySelector(`[title="${clickedShape}"]`);
+  if (!button) {
+      console.error(`Button with title "${clickedShape}" not found`);
+      return;
+    }
+  let elem;
+  if (getHTMLAttribute(button, "class") === "sidebar-shape") {
+    const shapeInfo = ShapeInfo[clickedShape];
+    if (shapeInfo) {
+      elem = new svgObject.ShapesConstruct["CustomShape"]({
+        sv: svgObject.sv,
+        ...shapeInfo,
+      });
+      console.log("Children property:", shapeInfo.children);
+      elem.create();
+      shapeEventListener(elem.getElement());
+      
+    } else {
+      console.error(`Shape info for "${clickedShape}" does not exist`);
+    }
+  } else {
+    elem = new svgObject.ShapesConstruct["Connector"]({
+      sv: svgObject.sv,
+      ...ConnectorInfo[clickedShape],
+    });
+    elem.create();
+  }
+}
+
+
+
+
+export { addEventListenerLeftSideBar, fetchAndDisplayShapes, svgObject};

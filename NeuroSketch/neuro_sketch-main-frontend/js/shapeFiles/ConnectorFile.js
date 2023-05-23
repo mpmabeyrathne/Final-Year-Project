@@ -40,3 +40,5 @@ let ConnectorInfo = {
         ]
     }
 };
+
+export {ConnectorInfo};

@@ -52,7 +52,7 @@ header {
     background-color: white;
     width: 70px !important;
     height: 30px !important;
-    border: 1px solid black;
+    border: 1px solid rgb(15, 11, 11);
     border-radius: 5px;
     margin-left: 7px;
     margin-right: 7px;
@@ -140,7 +140,7 @@ nav {
     align-items: center;
     width: 12%;
     height: 200px;
-    text-align: center;
+    text-align: left;
     color: #000000;
     font-family: Roboto, sans-serif;
     background-color: white;
@@ -258,8 +258,7 @@ input[type='radio'],
 
 .btn-save,
 .btnOpen,
-.btn-save-progress 
-.btn-image{
+.btn-save-progress {
     width: 100px;
     height: 30px;
     background-color: white;
@@ -410,4 +409,49 @@ input[type='number'] {
 
 .drawing-area {
     display: block !important;
+}
+
+.sidebar-left {
+   
+    overflow-y: auto;
+    height: 100vh; 
+    padding-bottom: 70px;
+}
+
+.sidebar-left::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sidebar-left::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar-left::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+}
+
+.sidebar-left::-webkit-scrollbar-thumb:hover {
+    background: #b3b1b1;
+}
+
+.sidebar-right {
+    padding-bottom: 70px;
+    overflow-y: auto;
+    height: 100vh; 
+}
+
+.sidebar-right::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sidebar-right::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar-right::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.sidebar-right::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

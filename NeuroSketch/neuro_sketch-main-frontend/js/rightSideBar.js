@@ -1,3 +1,6 @@
+import { selectedShape } from "./eventHandlers/shapeEventListener.js";
+import { resetControls } from "./shapeControls.js";
+
 function changeEventListener(selector, attributeName) {
     let element = $(selector);
     element.addEventListener('change', (e) => {
@@ -254,3 +257,4 @@ function addEventListenerRightSideBar() {
     topEventListener();
     fontEventListener();
 }
+export{addEventListenerRightSideBar};

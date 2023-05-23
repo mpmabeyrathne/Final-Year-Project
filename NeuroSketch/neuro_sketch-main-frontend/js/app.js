@@ -1,7 +1,14 @@
 import {CustomShape} from './components/CustomShape.js';
 import {Connector} from './components/Connector.js';
+import {sideBarShapeHoverEventListener, addEventListenerLeftSideBar, fetchAndDisplayShapes } from './leftSideBar.js'
+import { keyBoardEventListener } from './eventHandlers/keyboard.js';
+import { outsideClickEventListener } from './eventHandlers/shapeEventListener.js';
+import { saveEventHandler } from './eventHandlers/save.js';
+import { showDraftSelector, addGrid } from './modal.js';
+import { addEventListenerRightSideBar } from './rightSideBar.js';
 
-class SVG {
+
+export class SVG {
     constructor(selector) {
         this.sv = $(selector);
         setSVGAttribute(this.sv, 'viewBox', '0 0 ' + SVG_WIDTH + ' ' + SVG_HEIGHT);
@@ -45,7 +52,7 @@ class SVG {
         };
     }
 
-    initialise() {
+    initialise(get_value) {
         sideBarShapeHoverEventListener(this);
         addEventListenerLeftSideBar(this);
         makeDraggable(this);
@@ -53,8 +60,14 @@ class SVG {
         keyBoardEventListener(this);
         outsideClickEventListener(this);
         saveEventHandler(this);
+
+        if(get_value) {
+        fetchAndDisplayShapes(this);
+        }
     }
 }
+
+
 
 let sv;
 window.onload = function () {
@@ -66,5 +79,8 @@ window.onload = function () {
         addGrid(sv.sv);
     }
 
-    sv.initialise();
+    const value = document.getElementById('image-path').value;
+
+    sv.initialise(value);
 };
+

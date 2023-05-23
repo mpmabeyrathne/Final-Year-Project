@@ -8,10 +8,15 @@ export class CustomShape extends Shape {
         this.scale = scale;
         this.shapeElements = [];
 
-        children.forEach((child) => {
-            const key = Object.keys(child)[0];
-            this.createElement(key, child[key]);
-        });
+        if (Array.isArray(children)) {
+            children.forEach((child) => {
+              const key = Object.keys(child)[0];
+              this.createElement(key, child[key]);
+            });
+          } else if (children) {
+            const key = Object.keys(children)[0];
+            this.createElement(key, children[key]);
+          }
     }
 
     createElement(key, props = {}) {

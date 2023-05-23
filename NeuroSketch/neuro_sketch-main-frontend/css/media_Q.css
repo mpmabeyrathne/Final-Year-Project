@@ -1,0 +1,121 @@
+
+@media only screen and (min-width: 768px) and (max-width: 1500px) {
+  .btnSpaceLeft {
+    margin-left: 10px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1300px) {
+  .btnSpaceLeft {
+    margin-left: 10px;
+  }
+
+  .btn-save,
+  .btnOpen,
+  .btn-save-progress {
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+
+  .separator {
+    width: 220px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .btnSpaceLeft {
+    margin-left: 10px;
+  }
+
+  .btn-save,
+  .btnOpen,
+  .btn-save-progress {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+  .separator {
+    width: 195px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+
+.shape {
+    width: 30px;
+    height: 30px;
+}
+
+.TxtShapes{
+    font-size: 20px;
+}
+.fill-section,.size-section {
+    display: none;
+}
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1070px) {
+  .btnSpaceLeft {
+    margin-left: 10px;
+  }
+
+  .btn-save,
+  .btnOpen,
+  .btn-save-progress {
+    width: 70px;
+    height: 27px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  .separator {
+    width: 185px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+.general .shape {
+    width: 40px;
+    height: 30px;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+  .btnSpaceLeft {
+    margin-left: 10px;
+  }
+
+  .btn-save,
+  .btnOpen,
+  .btn-save-progress {
+    width: 50px;
+    height: 24px;
+    border-radius: 4px;
+    font-size: 11px;
+  }
+
+  .separator {
+    width: 145px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-save,
+  .btnOpen,
+  .btn-save-progress {
+    display: none;
+  }
+  .export-wrapper {
+    display: none;
+}
+
+}

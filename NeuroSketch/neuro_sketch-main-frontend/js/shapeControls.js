@@ -1,3 +1,5 @@
+import { selectedShape } from "./eventHandlers/shapeEventListener.js";
+
 function drawBoundingBox(boundingBox, x, y, width, height) {
     setSVGAttributes(boundingBox, {
         x: x,
@@ -91,3 +93,5 @@ function resetControls() {
         });
     }
 }
+
+export{drawControls, resetControls};

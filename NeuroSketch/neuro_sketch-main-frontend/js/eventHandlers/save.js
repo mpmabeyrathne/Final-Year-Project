@@ -1,3 +1,6 @@
+import { resetControls } from "../shapeControls.js";
+import { addGrid } from "../modal.js";
+
 function saveEventHandler(svgObject) {
     downloadEventListener(svgObject);
     saveProgressEventListener(svgObject);
@@ -93,3 +96,4 @@ function replaceNo() {
     let modal = $('.save-file-window');
     modal.classList.add('hide');
 }
+export{replaceNo, openFileSave, saveEventHandler};

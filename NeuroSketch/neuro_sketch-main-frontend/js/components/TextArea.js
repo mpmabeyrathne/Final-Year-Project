@@ -50,13 +50,15 @@ export class TextArea {
   }
 
   setForeignObjectAttributes() {
+    const height = Math.max(this.height / 2 - this.y - this.offsetY, 0);
+  
     setSVGAttributes(this.foreignObject, {
       width: this.width,
       overflow: this.overflow,
       class: 'text-box-parent',
       x: this.x - 10 + this.offsetX,
       y: this.y + this.height / 2 + this.offsetY,
-      height: this.height / 2 - this.y - this.offsetY
+      height: height
     });
   }
 
