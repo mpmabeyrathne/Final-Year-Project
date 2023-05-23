@@ -12,8 +12,8 @@ NeuroSketch utilizes cutting-edge technologies to detect hand-drawn web design s
 ## Installation
 
 1. Clone the NeuroSketch repository to your local machine using <https://github.com/mpmabeyrathne/Final-Year-Project.git>
-2. Download the first model using the provided link and place it in the `NeuroSketch-pytorch/model` directory
-3. Download the second model using the provided link and place it in the `NeuroSketch-pytorch-ObDetec/model` directory
+2. [Download](https://drive.google.com/drive/folders/1gJaskZJS14v0Sy9_O8kWK-aXnixVs204?usp=share_link) the NeuroSketch-pytorch model and place it in the `NeuroSketch-pytorch/model` directory
+3. [Download](https://drive.google.com/drive/folders/1vuoJagTPqeQoeR5NpS4_cRl6mE5s1hTl?usp=share_link) the NeuroSketch-pytorch-ObDetec model and place it in the `NeuroSketch-pytorch-ObDetec/model` directory
 4. Navigate to the project's root directory using `cd NeuroSketch` command
 5. Install the npm dependencies using `npm install` command
 6. Run the `server.js` file to start the NeuroSketch server using `node server.js` command
